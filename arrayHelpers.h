@@ -60,3 +60,24 @@ void getMinMaxValueAndIndexInArr(int arr[], int size);
  * @return Указатель на новый обратный массив
  */
 void reverseArr(int arr[], int revArr[], int size);
+
+/**
+ * Линейный поиск в двумерном массиве
+ *
+ * @param arr Массив
+ * @param column Количество строк
+ * @param row Количество столбцов
+ * @param searchValue Искомое значение
+ * @return Сам элемент - если найден, если нет - NULL
+ */
+int linearDoubleSearch(int arr[][MAX_SIZE], int column, int row, int searchValue);
+
+/**
+ * Линейный поиск в одномерном массиве
+ *
+ * @param arr Массив
+ * @param size Размер
+ * @param searchValue Искомое значение
+ * @return Сам элемент - если найден, если нет - NULL
+ */
+int linearSearch(int arr[], int size, int searchValue);

@@ -66,3 +66,24 @@ void reverseArr(int arr[], int revArr[], int size) {
     }
 }
 
+
+int linearDoubleSearch(int arr[][MAX_SIZE], int column, int row, int searchValue) {
+    for (int i = 0; i < column; i++) {
+        int searchInnerArr = linearSearch(arr[i], row, searchValue);
+        if(searchInnerArr) {
+            return searchInnerArr;
+        }
+    }
+
+    return NULL;
+}
+
+int linearSearch(int arr[], int size, int searchValue) {
+    for (int i = 0; i < size; i++) {
+        if (arr[i] == searchValue) {
+            return arr[i];
+        }
+    }
+
+    return NULL;
+}
