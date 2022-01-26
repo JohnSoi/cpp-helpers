@@ -39,7 +39,7 @@ void inputArr(int arr[], int size);
  * Вывод одномерного массива
  *
  * @param arr Ссылка на массив
- * @param size Количсевто элементов
+ * @param size Количество элементов
  */
 void printArr(int arr[], int size);
 
