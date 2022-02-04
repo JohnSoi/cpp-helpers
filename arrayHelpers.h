@@ -81,3 +81,35 @@ int linearDoubleSearch(int arr[][MAX_SIZE], int column, int row, int searchValue
  * @return Сам элемент - если найден, если нет - NULL
  */
 int linearSearch(int arr[], int size, int searchValue);
+
+/**
+ * Сортировка массива методом выбора
+ *
+ * @param arr Массив
+ * @param size Размер
+ */
+void selectionSort(int arr[], int size);
+
+/**
+ * Сортировка массива методом пузырька
+ *
+ * @param arr Массив
+ * @param size Размер
+ */
+void bubbleSort(int arr[], int size);
+
+/**
+ * Сортировка массива методом вставок
+ *
+ * @param arr Массив
+ * @param size Размер
+ */
+void insertSort(int arr[], int size);
+
+/**
+ * Сортировка массива методом объединением
+ *
+ * @param arr Массив
+ * @param size Размер
+ */
+void mergeSort(int arr[], int size);

@@ -70,7 +70,7 @@ void reverseArr(int arr[], int revArr[], int size) {
 int linearDoubleSearch(int arr[][MAX_SIZE], int column, int row, int searchValue) {
     for (int i = 0; i < column; i++) {
         int searchInnerArr = linearSearch(arr[i], row, searchValue);
-        if(searchInnerArr) {
+        if (searchInnerArr) {
             return searchInnerArr;
         }
     }
@@ -86,4 +86,90 @@ int linearSearch(int arr[], int size, int searchValue) {
     }
 
     return NULL;
+}
+
+void selectionSort(int arr[], int size) {
+    int j = 0;
+    int tmp = 0;
+    for (int i = 0; i < size; i++) {
+        j = i;
+        for (int k = i; k < size; k++) {
+            if (arr[j] > arr[k]) {
+                j = k;
+            }
+        }
+        tmp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = tmp;
+    }
+}
+
+void bubbleSort(int arr[], int size) {
+    int tmp = 0;
+    for (int i = 0; i < size; i++) {
+        for (int j = (size - 1); j >= (i + 1); j--) {
+            if (arr[j] < arr[j - 1]) {
+                tmp = arr[j];
+                arr[j] = arr[j - 1];
+                arr[j - 1] = tmp;
+            }
+        }
+    }
+}
+
+void insertSort(int arr[], int size) {
+    int key = 0;
+    int i = 0;
+    for (int j = 1; j < size; j++) {
+        key = arr[j];
+        i = j - 1;
+        while (i >= 0 && arr[i] > key) {
+            arr[i + 1] = arr[i];
+            i = i - 1;
+            arr[i + 1] = key;
+        }
+    }
+}
+
+
+void _merge(int merged[], int lenD, int L[], int lenL, int R[], int lenR) {
+    int i = 0;
+    int j = 0;
+    while (i < lenL || j < lenR) {
+        if (i < lenL & j < lenR) {
+            if (L[i] <= R[j]) {
+                merged[i + j] = L[i];
+                i++;
+            } else {
+                merged[i + j] = R[j];
+                j++;
+            }
+        } else if (i < lenL) {
+            merged[i + j] = L[i];
+            i++;
+        } else if (j < lenR) {
+            merged[i + j] = R[j];
+            j++;
+        }
+    }
+}
+
+
+void mergeSort(int arr[], int size) {
+    if (size > 1) {
+        int middle = size / 2;
+        int rem = size - middle;
+        int *L = new int[middle];
+        int *R = new int[rem];
+        for (int i = 0; i < size; i++) {
+            if (i < middle) {
+                L[i] = arr[i];
+            } else {
+                R[i - middle] = arr[i];
+            }
+        }
+        mergeSort(L, middle);
+        mergeSort(R, rem);
+        _merge(arr, size, L, middle, R, rem);
+    }
 }
