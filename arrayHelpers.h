@@ -113,3 +113,13 @@ void insertSort(int arr[], int size);
  * @param size Размер
  */
 void mergeSort(int arr[], int size);
+
+/**
+ * Признак присутствия элемента в массиве
+ *
+ * @param arr Массив
+ * @param size Размер
+ * @param neededElement Искомый элемент
+ * @return Найден или нет элемент в массиве
+ */
+bool inArray(int arr[], int size, int neededElement);

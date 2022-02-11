@@ -173,3 +173,13 @@ void mergeSort(int arr[], int size) {
         _merge(arr, size, L, middle, R, rem);
     }
 }
+
+bool inArray(int arr[], int size, int neededElement) {
+    for (int i = 0; i < size; i++) {
+        if (arr[i] == neededElement) {
+            return true;
+        }
+    }
+
+    return false;
+}
